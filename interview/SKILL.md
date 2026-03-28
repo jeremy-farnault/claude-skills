@@ -5,21 +5,22 @@ description: Interview the user to reach a clear, shared understanding of a task
 
 ## Process
 
-1. **Receive the task** — the user invokes `/interview <task description>`. Read it carefully. Identify what is clear, what is ambiguous, and what is missing.
+1. **Receive the task** — read it carefully. Map what is clear, what is ambiguous, and what is missing across all five dimensions.
 
-2. **Ask one question at a time** — in dependency order (foundational questions first). For each question:
-   - Lead with your recommended answer and reasoning
-   - Let the user confirm or correct
-   - Do not ask the next question until the current one is answered
+2. **Work through every dimension in dependency order** — do not skip a dimension because it seems obvious. Each answer may reveal branches that affect subsequent questions.
 
-3. **Cover these dimensions** (only ask what isn't already clear from the task description):
    - **Goal** — what does done look like?
    - **Scope** — what's in and what's explicitly out?
    - **Constraints** — hard limits (tech, time, style, compatibility)
    - **Expected output** — artifact, behavior change, or explanation?
    - **Edge cases** — known unknowns that could derail execution
 
-4. **Output the brief** — once you have enough clarity, produce a structured summary:
+3. **Ask one question at a time.** For each:
+   - State your recommendation first, with reasoning. This is mandatory — never ask a blank question.
+   - Wait for the user to confirm or correct before continuing.
+   - If the answer opens a new branch, resolve it before moving on.
+
+4. **Output the brief** — once all dimensions are resolved:
    - Goal
    - Scope
    - Constraints
@@ -30,9 +31,8 @@ description: Interview the user to reach a clear, shared understanding of a task
 
 ## Rules
 
-- One question at a time, no exceptions. Closely related sub-questions may be grouped only if truly inseparable.
-- Always lead with a recommended answer — never ask a blank question.
+- All five dimensions must be explicitly resolved before producing the brief — even if your initial read makes one seem obvious, state your assumption and get confirmation.
+- Every question must open with a recommendation. "I recommend X because Y — does that fit?" is the pattern.
+- If an answer creates a new decision branch, resolve it before advancing to the next dimension.
 - Do not accept vague answers. Push for specifics.
-- Skip questions already answered by the initial task description.
 - The skill ends at the approved brief. Execution is a separate step.
-- Never start executing the task during the interview.
