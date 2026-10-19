@@ -14,7 +14,7 @@ Vault: `~/Projects/documentation/` · App folder (`$APP`): `personal/01_Projects
 | `$APP/Episodes/YYYY-MM-DD.md` | One log per episode; the last 7 are the memory |
 | `work/02_Areas/Management/Tracking.md` | Tasks (format and done-rules: see the `track` skill) |
 
-Scripts live in this skill's `scripts/` folder. Run them with `npx tsx` from there (run `npm ci` once if `node_modules/` is missing). Each prints JSON.
+Scripts live in this skill's `scripts/` folder. Run them with `NODE_USE_ENV_PROXY=1 NODE_NO_WARNINGS=1 npx tsx` from there (run `npm ci` once if `node_modules/` is missing). Each prints JSON. The env vars make Node's `fetch` go through `HTTPS_PROXY` in cloud sessions, where direct DNS fails. On a laptop with no proxy set they change nothing. If a host comes back `403 Forbidden` from the tunnel, the cloud environment's network allowlist is missing it: record it in `errors` and name the host.
 
 - `calendar.ts <ics-url> [YYYY-MM-DD]`: the day's meetings, recurring series expanded
 - `feeds.ts <path-to-Sources.md> <since-ISO>`: RSS Items published after `since`
