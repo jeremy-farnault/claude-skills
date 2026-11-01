@@ -9,11 +9,17 @@ Documentation repo: `~/Projects/documentation/`
 Structure: `work/` and `personal/`, each following PARA — `00_Inbox`, `01_Projects`, `02_Areas`, `03_Resources`, `04_Archive`.
 Feature documents go in: `01_Projects/<ProjectName>/Specs/<feature-name>.md`
 
+**Personal vault** — `personal/CLAUDE.md` overrides the above. In short:
+- A unit is a project, or a Monorepo app: `personal/01_Projects/Monorepo/<App>/`.
+- The spec is `Specs/<Feature Name>.md`: Title Case, no date, no kebab-case.
+- Frontmatter: `type: spec`, `project` (folder slug), `app` (Monorepo only), `status: planned`, `created: <today>`.
+- If a note for this feature already exists with `status: idea` or `planned` (an idea, or a roadmap feature's stub), fill that file in place and keep its name. Don't create a second one.
+
 ## Process
 
 1. **Receive the brief** — read the feature description carefully. Identify what is clear, what is ambiguous, and what is missing.
 
-2. **Determine the project** — if the brief names a project clearly, confirm in one line: "I'll save this under `work/01_Projects/<ProjectName>/` — correct?" If not stated, ask: work or personal, and which project (listing existing ones). Create a new project folder with `Notes/`, `Research/`, `Specs/` subfolders if it doesn't exist.
+2. **Determine the project** — if the brief names a project clearly, confirm in one line: "I'll save this under `work/01_Projects/<ProjectName>/` — correct?" If not stated, ask: work or personal, and which project (listing existing ones). Create a new project folder with `Notes/`, `Research/`, `Specs/` subfolders if it doesn't exist (personal vault: an `Overview.md` and `Specs/` only, other folders created when needed).
 
 3. **Explore the codebase** — if invoked inside a code repo, read relevant files to verify assumptions in the brief before asking about them.
 
@@ -55,4 +61,4 @@ Feature documents go in: `01_Projects/<ProjectName>/Specs/<feature-name>.md`
 - Skip questions already answered by the brief or codebase exploration.
 - Do not include file paths or code snippets in Implementation Notes — they go stale.
 - Never write to disk before the user approves the preview.
-- Feature name in filename: kebab-case, no date prefix.
+- Feature name in filename: kebab-case, no date prefix (personal vault: Title Case).

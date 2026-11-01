@@ -50,12 +50,16 @@ The bar for each segment is in the Interest Profile.
 
 ## §4 Episode log template
 
-`Episodes/YYYY-MM-DD.md`:
+`Log/YYYY-MM-DD.md`:
 
 ```markdown
 ---
-date: YYYY-MM-DD
-type: episode
+type: log
+project: monorepo
+app: daily-podcast
+status: done
+created: YYYY-MM-DD
+kind: episode
 generatedAt: <ISO, Stockholm offset>   # next run's "since"
 window: { from: <ISO>, to: <ISO> }
 estimatedMinutes: 11
@@ -97,7 +101,7 @@ Sources: [title](url) · [title](url)
 
 ## §5 Saved story note
 
-`Saved/YYYY-MM-DD - <Title>.md`, written in feedback mode when Jérémy flags a story (kept or dropped) to dig into later.
+`Log/YYYY-MM-DD - <Title>.md`, written in feedback mode when Jérémy flags a story (kept or dropped) to dig into later.
 
 1. Fetch every source. Blocked or paywalled → web-search the headline for other coverage (headline and keywords only).
 2. Write a **full** summary for reading, not listening: every key number quoted exactly, the method and caveats, the authors' conclusions. Sections and tables are fine here.
@@ -106,11 +110,14 @@ Sources: [title](url) · [title](url)
 
 ```markdown
 ---
-date: YYYY-MM-DD          # episode date
-type: saved-story
+type: log
+project: monorepo
+app: daily-podcast
+status: planned           # → done once dug into (set done: <date>)
+created: YYYY-MM-DD       # episode date
+kind: story
 segment: tech
 episode: YYYY-MM-DD
-status: to-dig            # → dug
 tags: [podcast, saved]
 sources: [https://...]
 ---

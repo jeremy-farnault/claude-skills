@@ -7,6 +7,8 @@ description: Manage the ubiquitous language glossary for a project, following DD
 
 Documentation repo: `~/Projects/documentation/`
 Glossary file: `01_Projects/<ProjectName>/glossary.md`
+
+**Personal vault:** follow `personal/CLAUDE.md` instead: `<Unit>/Reference/Glossary.md`, with `type: reference`, `project`, `app` (Monorepo only), `status: active`, `created` frontmatter.
 One glossary per project, alphabetically sorted, grows over time.
 
 ## Process

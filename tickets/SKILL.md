@@ -9,6 +9,24 @@ Documentation repo: `~/Projects/documentation/`
 Tickets go in: `01_Projects/<ProjectName>/Specs/tickets/<feature-name>/`
 Filename format: zero-padded sequence by dependency order — `01-ticket-name.md`, `02-ticket-name.md`, etc.
 
+**Personal vault** — `personal/CLAUDE.md` overrides the above. In short:
+- The folder is named exactly like the spec: `<Unit>/Specs/tickets/<Spec Name>/`. The unit is a project or a Monorepo app.
+- Files are `NN - <Ticket Title>.md`.
+- Every ticket gets this frontmatter:
+  ```yaml
+  ---
+  type: ticket
+  project: <folder slug>
+  app: <app slug>          # Monorepo only
+  status: planned
+  created: <today>
+  spec: "[[<Spec Name>]]"
+  order: <N>
+  ---
+  ```
+- When a ticket ships, set `status: done` and `done: <date>` in the same commit. When the last one ships, set the spec's `status: done` and `done:` too.
+- Don't add a `**Status:**` line to the body: the frontmatter is the source of truth.
+
 ## Process
 
 1. **Receive the feature doc path** — if not provided at invocation, ask for it. Read the feature doc in full.
@@ -48,7 +66,7 @@ Filename format: zero-padded sequence by dependency order — `01-ticket-name.md
 
 - Never write to disk before the user approves the full ticket list.
 - Ticket titles: verb + noun, action-oriented (e.g. "Add auth middleware").
-- Filenames: kebab-case, zero-padded prefix by dependency order.
+- Filenames: kebab-case, zero-padded prefix by dependency order (personal vault: `NN - Title.md`).
 - Acceptance criteria must be testable — no vague conditions like "works correctly".
 - One ticket = one deployable unit of work where possible.
 - Omit the External Links section if no links apply to a ticket.

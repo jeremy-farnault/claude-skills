@@ -8,6 +8,8 @@ description: Create or update feature documentation from a meeting transcript or
 Documentation repo: `~/Projects/documentation/`
 Docs go in: `01_Projects/<ProjectName>/Docs/<feature-name>.md`
 
+**Personal vault:** follow `personal/CLAUDE.md` instead: `<Unit>/Design/<Feature Name>.md` (Title Case), with `type: design`, `project`, `app` (Monorepo only), `status: active`, `created` frontmatter.
+
 ## Process
 
 1. **Receive inputs** — accept project name, feature name, and input file path as arguments. If any are missing, ask for them interactively, listing existing projects and features to pick from.
