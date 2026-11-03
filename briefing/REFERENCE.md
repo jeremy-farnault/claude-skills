@@ -28,7 +28,7 @@ The bar for each segment is in the Interest Profile.
    - Fetch the article.
    - Google News links (`news.google.com/rss/articles/…`) are redirects. Web-search the headline to find the publisher's article and log that URL instead.
    - Paywalled, blocked or failing → keep the feed summary and web-search the headline for other outlets' coverage. Combine their facts and add their URLs to `sources`.
-   - Say "detail is thin" only when nothing more turned up.
+   - Nothing more turned up → tell the story with what you have, silently.
    - Searches carry the story's headline and keywords only, never Tracking content.
    - Newsletters are already full text.
 7. **Every drop gets a reason:**
@@ -45,7 +45,8 @@ The bar for each segment is in the Interest Profile.
 - **Segments:** a spoken signpost each ("Next: Sweden."). An empty segment gets one line.
 - **Story:** headline sentence → 2–4 sentences on what happened. An Update is one sentence.
 - **Closing:** "That's it." plus anything from "Your day" that needs an action today. Then sign off.
-- **For the ear:** short sentences, plain prose. No markdown, lists, tables, emoji or URLs. Spoken numbers ("about 2 percent", "Monday", "half past nine"). If a source is thin, say so.
+- **For the ear:** short sentences, plain prose. No markdown, lists, tables, emoji or URLs. Spoken numbers ("about 2 percent", "Monday", "half past nine").
+- **No sourcing talk:** never mention thin detail, paywalls, blocked or failed fetches, or anything you couldn't access. Just tell what you have.
 - Respect the profile's Style notes. They override this section.
 
 ## §4 Episode log template

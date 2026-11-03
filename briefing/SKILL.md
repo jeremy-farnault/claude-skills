@@ -26,12 +26,12 @@ Editorial rules, script style and the episode-log template: [REFERENCE.md](REFER
 
 ## Process: `/briefing` (make the episode)
 
-1. `git checkout main && git pull`. The vault's source of truth is `main`. Cloud sessions start on a `claude/*` branch, so switch first. Read `Sources.md`, `Interest Profile.md`, `Tracking.md` and the last 7 episodes in `Log/` (files named `YYYY-MM-DD.md`; the `YYYY-MM-DD - Title.md` ones are saved stories).
+1. `git checkout main && git pull`. The vault's source of truth is `main`. Cloud sessions start on a `claude/*` branch, so switch first. **If `Log/<today>.md` already exists**, the scheduled run made it: send its spoken text (every section from `## Your day` up to `## Dropped`, without headings or `Sources:` lines) as one message containing only the script, and stop. No preamble about it already existing, no collecting, no commit. Otherwise read `Sources.md`, `Interest Profile.md`, `Tracking.md` and the last 7 episodes in `Log/` (files named `YYYY-MM-DD.md`; the `YYYY-MM-DD - Title.md` ones are saved stories).
 2. **Window:** `since` = `generatedAt` of the newest episode; no episode yet → now minus 24h.
 3. **Collect, in parallel:** the three scripts (ICS URL from `Sources.md`; weather twice: today and tomorrow), and Gmail. For Gmail, `list_labels`, keep names starting `Podcast/`, and for each search `label:podcast-<name> after:<YYYY/MM/DD of since>`. Drop messages older than `since`. Read each with `get_thread` and split it into Items, one per story. A failing input is recorded in `errors`; never stop.
 4. **Your day** (REFERENCE §1): overdue → meetings → prep links → due today and next 7 days → weather (today's ride home, tomorrow's ride to work). No proposed dates.
 5. **News** (REFERENCE §2): segment → cluster → repeat check → bar test → full story for each kept one (fetch, or web search when blocked) → log every drop with a reason.
-6. **Write the script** (REFERENCE §3). If there are errors, send them first in one short separate message. Then send the script as **one message containing only the script**.
+6. **Write the script** (REFERENCE §3). Send it as **one message containing only the script**. Errors go in the log's `errors`, never in chat or the script.
 7. **Log** to `Log/YYYY-MM-DD.md` (REFERENCE §4). Commit `Daily Podcast: episode YYYY-MM-DD` with only that file, on `main`. Push with `git push origin HEAD:main`, even if the session runs on a `claude/*` branch, so the next run sees this episode. If the push to main is refused, push the branch and tell Jérémy it needs merging. Without the merge, the next episode loses its window.
 
 ## Process: feedback
